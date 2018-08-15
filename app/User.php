@@ -15,15 +15,16 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'login',
     ];
 
     /**
-     * The attributes that should be hidden for arrays.
+     * User can have many posts
      *
-     * @var array
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+    public function posts()
+    {
+        return $this->hasMany(Post::class);
+    }
 }
