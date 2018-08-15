@@ -133,6 +133,14 @@ class PostCreationTest extends TestCase
         $this->assertArrayHasKey('user_ip', $response['errors']);
     }
 
+    /** @test */
+    public function we_should_not_change_avg_value_after_creation_new_post()
+    {
+        $response = $this->postRequest(['user_id' => null, 'avg_rating' => 4]);
+
+        $this->assertSame(0.0, Post::first()->avg_rating);
+    }
+
     /**
      * Request to the server
      *

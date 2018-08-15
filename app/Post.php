@@ -11,4 +11,8 @@ class Post extends Model
         'body',
         'user_ip'
     ];
+
+    protected $casts = [
+        'avg_rating' => 'double',
+    ];
 }
