@@ -186,7 +186,7 @@ class RatablePostTest extends TestCase
     {
         $post = create(Post::class);
 
-        $this->assertSame(0, $post->avg_rating);
+        $this->assertSame(0.0, $post->avg_rating);
 
         $this->postJson(route('ratable.store'), ['post_id' => $post->id, 'rating' => 2]);
 
