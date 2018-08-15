@@ -1,7 +1,7 @@
 <?php
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.6.33 on 2018-08-15 02:27:08.
+ * Generated for Laravel 5.6.33 on 2018-08-15 08:59:08.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -12512,6 +12512,26 @@ namespace Illuminate\Support\Facades {
  
 }
 
+namespace Ixudra\Curl\Facades { 
+
+    class Curl {
+        
+        /**
+         * 
+         *
+         * @param $url string   The URL to which the request is to be sent
+         * @return \Ixudra\Curl\Builder 
+         * @static 
+         */ 
+        public static function to($url)
+        {
+            return \Ixudra\Curl\CurlService::to($url);
+        }
+         
+    }
+ 
+}
+
 
 namespace  { 
 
@@ -14855,6 +14875,8 @@ namespace  {
     class Validator extends \Illuminate\Support\Facades\Validator {}
 
     class View extends \Illuminate\Support\Facades\View {}
+
+    class Curl extends \Ixudra\Curl\Facades\Curl {}
  
 }
 
