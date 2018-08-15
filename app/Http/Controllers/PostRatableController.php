@@ -21,6 +21,11 @@ class PostRatableController extends Controller
                 Rating::where('post_id', $request->get('post_id'))->avg('rating'),
                 2);
 
+        // If this operation will be slow, wi should use Queue Jobs for this
+        Post::where('id', $request->get('post_id'))
+            ->limit(1)
+            ->update(['avg_rating' => $average]);
+
         return response()->json(['average' => $average]);
     }
 }

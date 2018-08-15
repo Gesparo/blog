@@ -13,5 +13,5 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::resource('post', 'PostController')->only(['store']);
+Route::resource('post', 'PostController')->only(['index', 'store']);
 Route::resource('post/ratable', 'PostRatableController')->only(['store']);

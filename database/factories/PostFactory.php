@@ -8,5 +8,6 @@ $factory->define(App\Post::class, function (Faker $faker) {
         'body' => $faker->text,
         'user_id' => function() { return create(\App\User::class)->id; },
         'user_ip' => $faker->ipv4,
+        'avg_rating' => 0,
     ];
 });

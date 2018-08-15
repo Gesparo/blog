@@ -180,4 +180,16 @@ class RatablePostTest extends TestCase
             [6, false],
         ];
     }
+
+    /** @test */
+    public function after_adding_rating_it_should_update_avg_rating_in_post()
+    {
+        $post = create(Post::class);
+
+        $this->assertSame(0, $post->avg_rating);
+
+        $this->postJson(route('ratable.store'), ['post_id' => $post->id, 'rating' => 2]);
+
+        $this->assertSame((double) 2, (double) $post->fresh()->avg_rating);
+    }
 }
