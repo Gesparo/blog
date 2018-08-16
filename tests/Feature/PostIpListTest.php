@@ -22,7 +22,7 @@ class PostIpListTest extends TestCase
             create(Post::class, ['user_id' => $user->id, 'user_ip' => '127.0.0.0']);
         });
 
-        $response = $this->getJson(route('api.index'))
+        $response = $this->getJson(route('ip.index'))
             ->assertStatus(200)
             ->json();
 
@@ -34,7 +34,7 @@ class PostIpListTest extends TestCase
     /** @test */
     public function it_should_have_empty_response_if_there_is_no_posts()
     {
-        $response = $this->getJson(route('api.index'))
+        $response = $this->getJson(route('ip.index'))
             ->assertStatus(200)
             ->json();
 
@@ -54,7 +54,7 @@ class PostIpListTest extends TestCase
             create(Post::class, ['user_id' => $user->id, 'user_ip' => '127.1.1.1']);
         });
 
-        $response = $this->getJson(route('api.index'))
+        $response = $this->getJson(route('ip.index'))
             ->assertStatus(200)
             ->json();
 
@@ -73,7 +73,7 @@ class PostIpListTest extends TestCase
         create(Post::class, ['user_id' => $user->id, 'user_ip' => '127.0.0.0']);
         create(Post::class, ['user_id' => $user->id, 'user_ip' => '127.0.0.0']);
 
-        $response = $this->getJson(route('api.index'))
+        $response = $this->getJson(route('ip.index'))
             ->assertStatus(200)
             ->json();
 
