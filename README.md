@@ -1,4 +1,6 @@
-# Тестовое задание - Блог
+# Блог [![Build Status](https://travis-ci.com/Gesparo/blog.svg?branch=master)](https://travis-ci.com/Gesparo/blog)
+
+Это тестовое задание по созданию JSON API блога
 
 ## Требования
 - git >= 2.13.1
