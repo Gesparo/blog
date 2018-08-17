@@ -1,4 +1,4 @@
-# Блог [![Build Status](https://travis-ci.com/Gesparo/blog.svg?branch=master)](https://travis-ci.com/Gesparo/blog)
+# Блог [![Build Status](https://travis-ci.com/Gesparo/blog.svg?branch=master)](https://travis-ci.com/Gesparo/blog) [![StyleCI](https://github.styleci.io/repos/144756721/shield?branch=master)](https://github.styleci.io/repos/144756721)
 
 Это тестовое задание по созданию JSON API блога
 

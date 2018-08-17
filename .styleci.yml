@@ -1,0 +1,8 @@
+preset: laravel
+
+finder:
+  exclude:
+    - "tests"
+  not-name:
+    - "*ide_helper.php"
+    - "server.php"
