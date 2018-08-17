@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use App\User;
-use Faker\Generator as Faker;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
+use Faker\Generator as Faker;
 use Ixudra\Curl\Facades\Curl;
+use Illuminate\Database\Eloquent\Collection;
 
 class GeneratorController extends Controller
 {
@@ -25,12 +25,13 @@ class GeneratorController extends Controller
         $ips = $this->createIps($faker);
 
         // Add posts
-        set_time_limit ( 1000 );
+        set_time_limit(1000);
 
-        if( $visualization ) echo 'Add posts<br><br>';
+        if ($visualization) {
+            echo 'Add posts<br><br>';
+        }
 
-        for($i = 0; $i < $limitOfPosts; ++$i)
-        {
+        for ($i = 0; $i < $limitOfPosts; $i++) {
             $time_start = microtime(true);
 
             $res = Curl::to(route('post.store'))
@@ -44,18 +45,20 @@ class GeneratorController extends Controller
             $time_end = microtime(true);
             $time = $time_end - $time_start;
 
-            if( $visualization ) echo $res->id . ' | Time: ' . $time . '<br>';
+            if ($visualization) {
+                echo $res->id.' | Time: '.$time.'<br>';
+            }
         }
 
-        if( $visualization ) echo 'Add rating<br><br>';
+        if ($visualization) {
+            echo 'Add rating<br><br>';
+        }
 
         // Add rating for first 500 posts
-        set_time_limit ( 1000 );
+        set_time_limit(1000);
 
-        for($i = 0; $i < $rangeOfRatings; ++$i)
-        {
-            for($j = 0; $j < $faker->numberBetween(10, 50); ++$j)
-            {
+        for ($i = 0; $i < $rangeOfRatings; $i++) {
+            for ($j = 0; $j < $faker->numberBetween(10, 50); $j++) {
                 $time_start = microtime(true);
 
                 $res = Curl::to(route('ratable.store'))
@@ -66,7 +69,9 @@ class GeneratorController extends Controller
                 $time_end = microtime(true);
                 $time = $time_end - $time_start;
 
-                if( $visualization ) echo '| Time: ' . $time . '<br>';
+                if ($visualization) {
+                    echo '| Time: '.$time.'<br>';
+                }
             }
         }
     }
@@ -87,7 +92,7 @@ class GeneratorController extends Controller
     {
         $ips = collect([]);
 
-        for ($i = 0; $i < 100; ++$i) {
+        for ($i = 0; $i < 100; $i++) {
             $ips->push($faker->ipv4);
         }
 
