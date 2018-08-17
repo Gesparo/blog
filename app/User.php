@@ -19,7 +19,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * User can have many posts
+     * User can have many posts.
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */

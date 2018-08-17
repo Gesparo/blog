@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class PostIpController extends Controller
@@ -19,15 +18,15 @@ class PostIpController extends Controller
                     'users' => $item->pluck('login')->unique(),
                 ];
             })
-            ->filter(function($item) {
-                return !empty($item['users']);
+            ->filter(function ($item) {
+                return ! empty($item['users']);
             });
 
         return $resultArray;
     }
 
     /**
-     * Get
+     * Get.
      *
      * @return \Illuminate\Support\Collection
      */

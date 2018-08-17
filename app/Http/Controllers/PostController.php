@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class PostController extends Controller
 {
     /**
-     * Show list of posts
+     * Show list of posts.
      */
     public function index()
     {
@@ -23,7 +23,7 @@ class PostController extends Controller
     }
 
     /**
-     * Add new post
+     * Add new post.
      *
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
