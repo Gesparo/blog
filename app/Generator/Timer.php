@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: gesparo
  * Date: 17.08.2018
- * Time: 22:07
+ * Time: 22:07.
  */
 
 namespace App\Generator;
@@ -11,14 +11,14 @@ namespace App\Generator;
 class Timer
 {
     /**
-     * Store start time
+     * Store start time.
      *
      * @var int
      */
     private $time = 0;
 
     /**
-     * Start timer
+     * Start timer.
      *
      * @return int
      */
@@ -28,7 +28,7 @@ class Timer
     }
 
     /**
-     * Get difference between current tile and start time
+     * Get difference between current tile and start time.
      *
      * @return int
      */

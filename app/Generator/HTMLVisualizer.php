@@ -3,23 +3,20 @@
  * Created by PhpStorm.
  * User: gesparo
  * Date: 17.08.2018
- * Time: 21:54
+ * Time: 21:54.
  */
 
 namespace App\Generator;
 
 /**
- * Class HTMLVisualizer
+ * Class HTMLVisualizer.
  *
  * Visualize generator response in html
- *
- * @package App\Generator
  */
 class HTMLVisualizer implements VisualizationInterface
 {
-
     /**
-     * Show post title
+     * Show post title.
      *
      * @return void
      */
@@ -29,7 +26,7 @@ class HTMLVisualizer implements VisualizationInterface
     }
 
     /**
-     * Show post response information
+     * Show post response information.
      *
      * @param $postInfo
      * @param $timing
@@ -37,11 +34,11 @@ class HTMLVisualizer implements VisualizationInterface
      */
     public function showPostResponseInfo($postInfo, $timing): void
     {
-        echo $postInfo->id . ' | Time: ' . $timing . '<br>';
+        echo $postInfo->id.' | Time: '.$timing.'<br>';
     }
 
     /**
-     * Show rating title
+     * Show rating title.
      *
      * @return void
      */
@@ -51,7 +48,7 @@ class HTMLVisualizer implements VisualizationInterface
     }
 
     /**
-     * Show rating responce information
+     * Show rating responce information.
      *
      * @param $ratingInfo
      * @param $timing
@@ -59,6 +56,6 @@ class HTMLVisualizer implements VisualizationInterface
      */
     public function showRatingResponseInfo($ratingInfo, $timing): void
     {
-        echo $ratingInfo . ' | Time: ' . $timing . '<br>';
+        echo $ratingInfo.' | Time: '.$timing.'<br>';
     }
 }
