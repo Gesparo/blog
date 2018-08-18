@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Generator\Builder;
-use App\Generator\Generator;
 use Illuminate\Http\Request;
 
 class GeneratorController extends Controller
@@ -26,7 +25,7 @@ class GeneratorController extends Controller
         $limitOfRatings = (int) $request->get('rating_limit', 50);
         $rangeLimitForOneRating = (int) $request->get('rating_range_limit', 50);
 
-        if( $limitOfRatings > $limitOfPosts ) {
+        if ($limitOfRatings > $limitOfPosts) {
             $limitOfRatings = $limitOfPosts;
         }
 

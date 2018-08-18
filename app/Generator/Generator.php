@@ -3,23 +3,22 @@
  * Created by PhpStorm.
  * User: gesparo
  * Date: 17.08.2018
- * Time: 21:01
+ * Time: 21:01.
  */
 
 namespace App\Generator;
 
-
 use App\Post;
-use App\Rating;
 use App\User;
+use App\Rating;
 use Faker\Generator as Faker;
-use Illuminate\Support\Collection;
 use Ixudra\Curl\Facades\Curl;
+use Illuminate\Support\Collection;
 
 class Generator
 {
     /**
-     * Is generator should send real requests to routes
+     * Is generator should send real requests to routes.
      *
      * @var bool
      */
@@ -49,7 +48,7 @@ class Generator
      */
     private $faker;
     /**
-     * Display information in output
+     * Display information in output.
      *
      * @var VisualizationInterface
      */
@@ -88,8 +87,7 @@ class Generator
         $ratingsAmount = 50,
         $ratingForOnePostAmount = 50,
         $shouldVisualize = false
-    )
-    {
+    ) {
         $this->usersAmount = $usersAmount;
         $this->ipsAmount = $ipsAmount;
         $this->postAmount = $postAmount;
@@ -112,7 +110,7 @@ class Generator
     }
 
     /**
-     * Check if generator status is fake
+     * Check if generator status is fake.
      *
      * @return bool
      */
@@ -122,7 +120,7 @@ class Generator
     }
 
     /**
-     * Start generator process
+     * Start generator process.
      *
      * @return bool
      */
@@ -142,7 +140,7 @@ class Generator
     }
 
     /**
-     * Set script limit time
+     * Set script limit time.
      *
      * @return bool
      */
@@ -155,15 +153,13 @@ class Generator
     }
 
     /**
-     * Add rating for posts
+     * Add rating for posts.
      *
      * @param Collection $posts
      * @return bool
      */
     private function addRatings(Collection $posts): bool
     {
-
-
         if ($this->shouldVisualize) {
             $this->visualizer->showRatingTitle();
         }
@@ -185,7 +181,7 @@ class Generator
 
                 if ($this->shouldVisualize) {
                     $this->visualizer->showRatingResponseInfo(
-                        'Post: ' . $posts->get($i)->id . ', Iteration ' . ($j + 1),
+                        'Post: '.$posts->get($i)->id.', Iteration '.($j + 1),
                         $this->timer->getDiff()
                     );
                 }
@@ -196,7 +192,7 @@ class Generator
     }
 
     /**
-     * Send request to route and add new rating
+     * Send request to route and add new rating.
      *
      * @param $post
      * @param $rating
@@ -213,7 +209,7 @@ class Generator
     }
 
     /**
-     * Add rating without sending request to route
+     * Add rating without sending request to route.
      *
      * @param $post
      * @param $rating
@@ -236,7 +232,7 @@ class Generator
     }
 
     /**
-     * Add new posts
+     * Add new posts.
      *
      * @param Collection $users
      * @param Collection $ips
@@ -250,7 +246,7 @@ class Generator
 
         $result = collect([]);
 
-        for ($i = 0; $i < $this->postAmount; ++$i) {
+        for ($i = 0; $i < $this->postAmount; $i++) {
             $this->timer->start();
 
             if (self::$isFake) {
@@ -270,7 +266,7 @@ class Generator
     }
 
     /**
-     * Create post using requests
+     * Create post using requests.
      *
      * @param $user
      * @param $ip
@@ -290,7 +286,7 @@ class Generator
     }
 
     /**
-     * Create posts without sending request to route
+     * Create posts without sending request to route.
      *
      * @param $user
      * @param $ip
@@ -302,7 +298,7 @@ class Generator
     }
 
     /**
-     * Create users
+     * Create users.
      *
      * @return Collection
      */
@@ -316,7 +312,7 @@ class Generator
     }
 
     /**
-     * Generate ips
+     * Generate ips.
      *
      * @return Collection
      */
@@ -324,7 +320,7 @@ class Generator
     {
         $result = collect([]);
 
-        for ($i = 0; $i < $this->ipsAmount; ++$i) {
+        for ($i = 0; $i < $this->ipsAmount; $i++) {
             $result->push($this->faker->ipv4);
         }
 
