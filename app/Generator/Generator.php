@@ -8,10 +8,10 @@
 
 namespace App\Generator;
 
-use App\Generator\Sender\DataSender;
 use App\User;
 use Faker\Generator as Faker;
 use Illuminate\Support\Collection;
+use App\Generator\Sender\DataSender;
 
 class Generator
 {
