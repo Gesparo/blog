@@ -8,11 +8,17 @@
 
 namespace App\Generator;
 
+use App\Generator\Sender\PostSender;
+use App\Generator\Sender\RatingSender;
 use Faker\Generator as Faker;
 use InvalidArgumentException;
 
 class Builder
 {
+    /** @var PostSender */
+    protected $postSender;
+    /** @var RatingSender */
+    protected $ratingSender;
     /**
      * @var int
      */
@@ -60,6 +66,8 @@ class Builder
         $this->visualizer = new HTMLVisualizer();
         $this->faker = \Faker\Factory::create();
         $this->timer = new Timer();
+        $this->postSender  = new PostSender();
+        $this->ratingSender = new RatingSender();
     }
 
     /**
@@ -192,6 +200,8 @@ class Builder
             $this->faker,
             $this->visualizer,
             $this->timer,
+            $this->postSender,
+            $this->ratingSender,
             $this->usersAmount,
             $this->ipsAmount,
             $this->postAmount,
