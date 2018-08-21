@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: gesparo
  * Date: 19.08.2018
- * Time: 10:54
+ * Time: 10:54.
  */
 
 namespace App\Generator\Sender;
@@ -15,7 +15,7 @@ use Ixudra\Curl\Facades\Curl;
 class RatingSender extends DataSender
 {
     /**
-     * Emulation of sending data to route
+     * Emulation of sending data to route.
      *
      * @param mixed ...$args
      * @return mixed
@@ -39,7 +39,7 @@ class RatingSender extends DataSender
     }
 
     /**
-     * Send data to route
+     * Send data to route.
      *
      * @param mixed ...$args
      * @return mixed

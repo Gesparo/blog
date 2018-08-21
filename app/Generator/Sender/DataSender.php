@@ -3,11 +3,10 @@
  * Created by PhpStorm.
  * User: gesparo
  * Date: 19.08.2018
- * Time: 10:38
+ * Time: 10:38.
  */
 
 namespace App\Generator\Sender;
-
 
 abstract class DataSender
 {
@@ -39,14 +38,14 @@ abstract class DataSender
     }
 
     /**
-     * Send data
+     * Send data.
      *
      * @param mixed ...$args
      * @return mixed
      */
     public function send(...$args)
     {
-        if( self::isFake() ) {
+        if (self::isFake()) {
             return $this->sendFake($args);
         }
 
@@ -54,7 +53,7 @@ abstract class DataSender
     }
 
     /**
-     * Emulation of sending data to route
+     * Emulation of sending data to route.
      *
      * @param mixed ...$args
      * @return mixed
@@ -62,7 +61,7 @@ abstract class DataSender
     abstract protected function sendFake(...$args);
 
     /**
-     * Send data to route
+     * Send data to route.
      *
      * @param mixed ...$args
      * @return mixed
