@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Post;
-use App\Repository\PostRepository;
-use App\Trending;
 use App\User;
+use App\Trending;
 use Illuminate\Http\Request;
-use Illuminate\Support\Collection;
+use App\Repository\PostRepository;
 
 class PostController extends Controller
 {
@@ -44,6 +43,4 @@ class PostController extends Controller
 
         return response()->json($user->posts()->create($request->all()));
     }
-
-
 }
