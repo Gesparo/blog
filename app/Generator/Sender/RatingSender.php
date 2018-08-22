@@ -8,7 +8,6 @@
 
 namespace App\Generator\Sender;
 
-use App\Post;
 use App\Rating;
 use App\Trending;
 use Ixudra\Curl\Facades\Curl;

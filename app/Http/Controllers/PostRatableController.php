@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Post;
 use App\Rating;
 use App\Trending;
 use Illuminate\Http\Request;

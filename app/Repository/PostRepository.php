@@ -3,11 +3,10 @@
  * Created by PhpStorm.
  * User: gesparo
  * Date: 22.08.2018
- * Time: 17:14
+ * Time: 17:14.
  */
 
 namespace App\Repository;
-
 
 use App\Post;
 use App\Trending;
@@ -32,7 +31,7 @@ class PostRepository
     }
 
     /**
-     * Get popular posts
+     * Get popular posts.
      *
      * @param int $limit
      * @return Collection
@@ -41,7 +40,7 @@ class PostRepository
     {
         $trendingElements = $this->trending->get($limit);
 
-        if( $trendingElements->isEmpty() ) {
+        if ($trendingElements->isEmpty()) {
             return collect([]);
         }
 
@@ -54,7 +53,7 @@ class PostRepository
     }
 
     /**
-     * Sort posts by trending
+     * Sort posts by trending.
      *
      * @param Collection $trendingOrder
      * @param Collection $posts
@@ -65,12 +64,13 @@ class PostRepository
         $result = collect([]);
 
         foreach ($trendingOrder as $trendingItem) {
-
             $targetPostPosition = $posts->search(function (Post $post) use ($trendingItem) {
                 return $post->id === (int) $trendingItem;
             });
 
-            if( false === $targetPostPosition ) continue;
+            if (false === $targetPostPosition) {
+                continue;
+            }
 
             $result->push($posts->get($targetPostPosition));
         }
