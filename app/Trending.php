@@ -3,7 +3,7 @@
  * Created by PhpStorm.
  * User: gesparo
  * Date: 21.08.2018
- * Time: 22:41
+ * Time: 22:41.
  */
 
 namespace App;
@@ -25,7 +25,7 @@ class Trending
     }
 
     /**
-     * Set rating for specific post
+     * Set rating for specific post.
      *
      * @param int $postId
      * @param float $rating
@@ -37,7 +37,7 @@ class Trending
     }
 
     /**
-     * Get redis cache key
+     * Get redis cache key.
      *
      * @return string
      */
