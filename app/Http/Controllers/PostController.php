@@ -3,23 +3,25 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Repository\PostRepository;
+use App\Trending;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Collection;
 
 class PostController extends Controller
 {
     /**
      * Show list of posts.
+     * @param Trending $trending
      */
-    public function index()
+    public function index(Trending $trending)
     {
         $limit = \request()->get('limit', 50);
         $limit = is_numeric($limit) ? (int) $limit : 50;
 
         // we should cache response for better performance
-        return Post::orderBy('avg_rating', 'desc')
-            ->take($limit)
-            ->get(['title', 'body']);
+        return (new PostRepository($trending))->popular($limit);
     }
 
     /**
@@ -42,4 +44,6 @@ class PostController extends Controller
 
         return response()->json($user->posts()->create($request->all()));
     }
+
+
 }

@@ -10,6 +10,7 @@ namespace App\Generator\Sender;
 
 use App\Post;
 use App\Rating;
+use App\Trending;
 use Ixudra\Curl\Facades\Curl;
 
 class RatingSender extends DataSender
@@ -31,9 +32,7 @@ class RatingSender extends DataSender
             Rating::where('post_id', $post->id)->avg('rating'),
             2);
 
-        Post::where('id', $post->id)
-            ->limit(1)
-            ->update(['avg_rating' => $average]);
+        (new Trending)->set($post->id, $average);
 
         return true;
     }

@@ -19,7 +19,6 @@ class CreatePostsTable extends Migration
             $table->string('title')->unique();
             $table->text('body');
             $table->string('user_ip');
-            $table->decimal('avg_rating', 3, 2)->default(0)->index();
             $table->timestamps();
         });
     }
