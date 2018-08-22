@@ -6,6 +6,7 @@
 - git >= 2.13.1
 - composer >= 1.4.2
 - PostgreSQL >= 10.0.0
+- Redis => 3.2.0
 - PHP >= 7.1.3
 - OpenSSL PHP Extension
 - PDO PHP Extension
@@ -41,6 +42,13 @@ DB_PORT=5432
 DB_DATABASE=homestead
 DB_USERNAME=homestead
 DB_PASSWORD=secret
+```
+
+Настроить подключение к Redis
+```
+REDIS_HOST=127.0.0.1
+REDIS_PASSWORD=null
+REDIS_PORT=6379
 ```
 
 Мигрировать базу данных, прописав в консоли:
