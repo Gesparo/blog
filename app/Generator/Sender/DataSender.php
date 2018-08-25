@@ -46,10 +46,10 @@ abstract class DataSender
     public function send(...$args)
     {
         if (self::isFake()) {
-            return $this->sendFake($args);
+            return $this->sendFake(...$args);
         }
 
-        return $this->sendRoute($args);
+        return $this->sendRoute(...$args);
     }
 
     /**

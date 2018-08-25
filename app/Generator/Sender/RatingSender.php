@@ -22,7 +22,7 @@ class RatingSender extends DataSender
      */
     protected function sendFake(...$args)
     {
-        [$post, $rating] = $args[0];
+        [$post, $rating] = $args;
 
         // it is not good idea to duplicate route and generator logic, but it is the simplest solution
         Rating::create(['post_id' => $post->id, 'rating' => $rating]);
@@ -44,7 +44,7 @@ class RatingSender extends DataSender
      */
     protected function sendRoute(...$args)
     {
-        [$post, $rating] = $args[0];
+        [$post, $rating] = $args;
 
         Curl::to(route('ratable.store'))
             ->withData(['post_id' => $post->id, 'rating' => $rating])

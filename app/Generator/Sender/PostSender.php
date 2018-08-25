@@ -21,7 +21,7 @@ class PostSender extends DataSender
      */
     protected function sendFake(...$args)
     {
-        [$user, $ip] = $args[0];
+        [$user, $ip] = $args;
 
         return create(Post::class, ['user_id' => $user->id, 'user_ip' => $ip]);
     }
@@ -34,7 +34,7 @@ class PostSender extends DataSender
      */
     protected function sendRoute(...$args)
     {
-        [$user, $ip] = $args[0];
+        [$user, $ip] = $args;
 
         $requestData = array_merge(
             make(Post::class, ['user_id' => null, 'user_ip' => $ip])->toArray(),
